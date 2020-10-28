@@ -39,7 +39,7 @@ export async function getStaticProps() {
     };
   } catch (error) {
     console.log(error.message);
-    return { props: { blogs: [] } };
+    return { props: { blogs: [] },revalidate: 60 };
   }
 }
 export default Blogs;

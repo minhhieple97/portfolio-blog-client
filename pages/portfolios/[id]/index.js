@@ -8,6 +8,9 @@ import { formatDate } from "helpers";
 const Portfolio = ({ portfolio }) => {
   const router = useRouter();
   const { data: user, loading: loadingUser } = useGetUser();
+  if (router.isFallback) {
+    return <h1>Your page is geting server</h1>;
+  }
   return (
     <BaseLayout navClass="transparent" user={user} loading={loadingUser}>
       <BasePage
@@ -19,25 +22,31 @@ const Portfolio = ({ portfolio }) => {
         <div className="portfolio-detail">
           <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
             <main role="main" className="inner page-cover">
-              <h1 className="cover-heading">{portfolio.title}</h1>
-              <p className="lead dates">
-                {formatDate(portfolio.startDate)} -{" "}
-                {formatDate(portfolio.endDate) || "Present"}
-              </p>
-              <p className="lead info mb-0">
-                {portfolio.jobTitle} | {portfolio.company} |{" "}
-                {portfolio.location}
-              </p>
-              <p className="lead">{portfolio.description}</p>
-              <p className="lead">
-                <a
-                  href={portfolio.companyWebsite}
-                  target="_"
-                  className="btn btn-lg btn-secondary"
-                >
-                  Visit Company
-                </a>
-              </p>
+              {router.isFallback ? (
+                <h1 className="cover-heading">Your page is geting served...</h1>
+              ) : (
+                <React.Fragment>
+                  <h1 className="cover-heading">{portfolio.title}</h1>
+                  <p className="lead dates">
+                    {formatDate(portfolio.startDate)} -{" "}
+                    {formatDate(portfolio.endDate) || "Present"}
+                  </p>
+                  <p className="lead info mb-0">
+                    {portfolio.jobTitle} | {portfolio.company} |{" "}
+                    {portfolio.location}
+                  </p>
+                  <p className="lead">{portfolio.description}</p>
+                  <p className="lead">
+                    <a
+                      href={portfolio.companyWebsite}
+                      target="_"
+                      className="btn btn-lg btn-secondary"
+                    >
+                      Visit Company
+                    </a>
+                  </p>
+                </React.Fragment>
+              )}
             </main>
           </div>
         </div>
@@ -53,7 +62,7 @@ export async function getStaticPaths() {
     params: { id: portfolio._id },
   }));
   // fallback : flase means that "not found pages" will be resolved
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 export async function getStaticProps({ params }) {
   const json = await new PortfolioApi().getById(params.id);
