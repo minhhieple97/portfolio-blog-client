@@ -1,0 +1,33 @@
+{
+  "name": "portfolio-blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start_dev": "NODE_ENV=production node server.js",
+    "start_win": "SET NODE_ENV=production & node server.js",
+    "start":"next start"
+  },
+  "dependencies": {
+    "@auth0/nextjs-auth0": "^0.16.0",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "next": "9.5.3",
+    "next-routes": "^1.4.2",
+    "react": "16.13.1",
+    "react-datepicker": "^3.3.0",
+    "react-dom": "16.13.1",
+    "react-hook-form": "^6.9.3",
+    "react-resize-detector": "^5.2.0",
+    "react-toastify": "^6.0.9",
+    "react-typed": "^1.2.0",
+    "reactstrap": "^8.6.0",
+    "sass": "^1.26.11",
+    "slate-simple-editor": "git+https://github.com/Jerga99/slate-simple-editor.git",
+    "swr": "^0.3.5",
+    "unique-slug": "^2.0.2"
+  }
+}
