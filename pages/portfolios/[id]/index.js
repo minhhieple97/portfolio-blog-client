@@ -16,14 +16,16 @@ const Portfolio = ({ portfolio }) => {
       <BasePage
         noWrapper
         indexPage
-        title={`${portfolio.title} - Minh Hiep Le  `}
-        metaDescription={portfolio.description}
+        title={`${portfolio?.title} - Minh Hiep Le  `}
+        metaDescription={portfolio?.description}
       >
         <div className="portfolio-detail">
           <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
             <main role="main" className="inner page-cover">
               {router.isFallback ? (
                 <h1 className="cover-heading">Your page is geting served...</h1>
+              ) : !portfolio ? (
+                <>Your Error page</>
               ) : (
                 <React.Fragment>
                   <h1 className="cover-heading">{portfolio.title}</h1>
@@ -65,8 +67,11 @@ export async function getStaticPaths() {
   return { paths, fallback: true };
 }
 export async function getStaticProps({ params }) {
-  const json = await new PortfolioApi().getById(params.id);
-  const portfolio = json.data;
+  let portfolio = null;
+  try {
+    const json = await new PortfolioApi().getById(params.id);
+    portfolio = json.data;
+  } catch {}
   return { props: { portfolio }, revalidate: 60 };
 }
 export default Portfolio;
