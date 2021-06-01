@@ -45,7 +45,7 @@ export default function About() {
               <p className={`subsubTitle ${createFadeInClass()}`}>
                 I started learning programming in 2018, now I have experience
                 working mainly with Javascript for backend web development using
-                Node.js also I used to build simple UI using React. js.
+                Node.js also I used to build simple UI using React.js.
               </p>
               <p className={`subsubTitle ${createFadeInClass()}`}>
                 I am a calm person who quickly adapts to a new environment,
