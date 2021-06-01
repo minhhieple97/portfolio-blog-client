@@ -7,7 +7,7 @@
     "build": "next build",
     "start_dev": "NODE_ENV=production node server.js",
     "start_win": "SET NODE_ENV=production & node server.js",
-    "start":"next start"
+    "start": "next start"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^0.16.0",

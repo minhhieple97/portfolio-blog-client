@@ -40,9 +40,9 @@ export default function Header({ user, loading, className }) {
               <NavItem className="port-navbar-item">
                 <BsNavLink href="/portfolios" title="Portfolios" />
               </NavItem>
-              <NavItem className="port-navbar-item">
+              {/* <NavItem className="port-navbar-item">
                 <BsNavLink href="/blogs" title="Blogs" />
-              </NavItem>
+              </NavItem> */}
               <NavItem className="port-navbar-item">
                 <BsNavLink href="/cv" title="Cv" />
               </NavItem>

@@ -22,7 +22,7 @@ export default function About() {
         <Row className="mt-5">
           <Col md="6">
             <div className="left-side">
-              <h1 className={`title ${createFadeInClass()}`}>Hello, Welcome</h1>
+              <h1 className="title">Hello, Welcome</h1>
               <h4 className={`subtitle ${createFadeInClass()}`}>
                 To About Page
               </h4>
@@ -33,23 +33,25 @@ export default function About() {
           </Col>
           <Col md="6">
             <div className={`${createFadeInClass()}`}>
-              <p>
-                My name is Filip Jerga and I am an experienced software engineer
-                and freelance developer.
+              <p className={`subsubTitle ${createFadeInClass()}`}>
+                My name is Minh Hiep Le and I have experience in web
+                development.
               </p>
-              <p>
-                I have a Master's degree in Artificial Intelligence and several
-                years of experience working on a wide range of technologies and
-                projects from C++ development for ultrasound devices to modern
-                mobile and web applications in React and Angular.
+              <p className={`subsubTitle ${createFadeInClass()}`}>
+                It wasn't until college that I realized I had a special interest
+                in programming, so even though I was a university student
+                majoring in economics, I chose my job as a web programmer.
               </p>
-              <p>
-                Throughout my career, I have acquired advanced technical
-                knowledge and the ability to explain programming topics clearly
-                and in detail to a broad audience. I invite you to take my
-                course, where I have put a lot of effort to explain web and
-                software engineering concepts in a detailed, hands-on and
-                understandable way.
+              <p className={`subsubTitle ${createFadeInClass()}`}>
+                I started learning programming in 2018, now I have experience
+                working mainly with Javascript for backend web development using
+                Node.js also I used to build simple UI using React. js.
+              </p>
+              <p className={`subsubTitle ${createFadeInClass()}`}>
+                I am a calm person who quickly adapts to a new environment,
+                eager to learn, not afraid of challenges at work, looking
+                forward to cooperating with you in the future. Thanks for
+                visiting my website!
               </p>
             </div>
           </Col>
