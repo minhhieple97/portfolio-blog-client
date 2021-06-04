@@ -12,7 +12,7 @@ export default function Cv() {
           <Col md={{ size: 8, offset: 2 }}>
             <iframe
               style={{ width: "100%", height: "800px" }}
-              src="/Le Minh Hiep.pdf"
+              src="/[LE-MINH-HIEP]-CV.pdf"
             ></iframe>
           </Col>
         </Row>
